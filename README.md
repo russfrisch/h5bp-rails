@@ -1,6 +1,6 @@
 About
 ======
-A Rails 3.1+ application template used to setup a new Rails app using Paul Irish's HTML5 Boilerplate (http://html5boilerplate.com/)<br>
+A fully Rails 3.1+ compliant application template used to setup a new Rails app using Paul Irish's HTML5 Boilerplate (http://html5boilerplate.com/)<br>
 This template can be considered an upgrade of the Rails 3.0.x application template found here: https://github.com/russfrisch/Rails-HTML5-Boilerplate-Template<br>
 
 How to Use
@@ -13,9 +13,9 @@ What this Template Does
 This template does the following:
 1.  Downloads HTML5 Boilerplate index.html and merges it with the default application.html.erb Rails generates.
 2.  Downloads HTML5 Boilerplate style.css and merges it with the default application.css Rails generates.
-1.  Downloads a version of the HTML5 Boilerplate plugins.js converted to CoffeeScript
-3.  Downloads HTML5 Boilerplate misc. assets: icons, .htaccess, etc.
-6.  Updates Gemfile to include Modernizr-Rails which provides the Modernizr.js dependency HTML5 Boilerplate uses.
+3.  Downloads a version of the HTML5 Boilerplate plugins.js converted to CoffeeScript
+4.  Downloads HTML5 Boilerplate misc. assets: icons, .htaccess, etc.
+5.  Updates Gemfile to include Modernizr-Rails which provides the Modernizr.js dependency HTML5 Boilerplate uses.
 
 Push Requests
 ==============
