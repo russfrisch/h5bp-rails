@@ -11,6 +11,7 @@ Run directly from github:<br>
 What this Template Does
 ========================
 This template does the following:
+
 1.  Downloads HTML5 Boilerplate index.html and merges it with the default application.html.erb Rails generates.
 2.  Downloads HTML5 Boilerplate style.css and merges it with the default application.css Rails generates.
 3.  Downloads a version of the HTML5 Boilerplate plugins.js converted to CoffeeScript
