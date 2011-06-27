@@ -53,6 +53,13 @@ gsub_file 'app/views/layouts/application.html.erb', /<!-- JavaScript[\s\S]*!-- e
 
 # Add Modernizr-Rails dependency to get Modernizr.js support
 gsub_file 'Gemfile', /gem 'jquery-rails'/ do
-  "gem 'jquery-rails'
-gem 'modernizr-rails'"
+  "# JavasScript libs
+gem 'jquery-rails'
+gem 'modernizr-rails'
+
+# Stylesheet libs
+# gem 'blueprint-rails'
+
+# Ajax request CoffeeScript support
+# gem 'coffeebeans'"
 end
