@@ -51,7 +51,8 @@ end
 gsub_file 'app/views/layouts/application.html.erb', /<div id="container">[\s\S]*<\/div>/, '<%= yield %>'
 gsub_file 'app/views/layouts/application.html.erb', /<!-- JavaScript[\s\S]*!-- end scripts-->/, '<%= javascript_include_tag "application" %>'
 
-# Add Modernizr-Rails dependency to get Modernizr.js support
+# Add Modernizr-Rails dependency to get Modernizr.js support,
+# optional blueprint-rails, coffeebeans, and Heroku dependencies.
 gsub_file 'Gemfile', /gem 'jquery-rails'/ do
   "# JavasScript libs
 gem 'jquery-rails'
@@ -61,5 +62,12 @@ gem 'modernizr-rails'
 # gem 'blueprint-rails'
 
 # Ajax request CoffeeScript support
-# gem 'coffeebeans'"
+# gem 'coffeebeans'
+
+# Heroku deployment requirements
+# group :production do
+#   gem 'therubyracer-heroku'
+#   gem 'pg'
+# end
+"
 end
