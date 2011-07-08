@@ -11,9 +11,8 @@ Run directly from github:<br>
 Can also be applied to an existing project, but will need some integration by hand:<br>
 `rake rails:template LOCATION=https://github.com/russfrisch/h5bp-rails/raw/master/h5bp_apply.rb`<br>
 
-What this Template Does
+What This Template Does
 ========================
-This template does the following:
 
 1.  Downloads HTML5 Boilerplate index.html and merges it with the default application.html.erb Rails generates.
 2.  Downloads HTML5 Boilerplate style.css and merges it with the default application.css Rails generates.
