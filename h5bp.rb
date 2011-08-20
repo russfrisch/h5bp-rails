@@ -21,6 +21,7 @@ prepend_to_file 'app/assets/stylesheets/application.css' do
 
 "
 end
+gsub_file 'app/assets/stylesheets/application.css', /==\|==/, '==|==.'
 
 # Download HTML5 Boilerplate site root assets
 get "https://github.com/russfrisch/html5-boilerplate/raw/master/apple-touch-icon-114x114-precomposed.png", "public/apple-touch-icon-114x114-precomposed.png"
