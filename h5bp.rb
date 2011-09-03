@@ -8,20 +8,26 @@ get "https://github.com/russfrisch/h5bp-rails/raw/master/assets/plugins.js.coffe
 # Download and merge HTML5 Boilerplate stylesheet with application.css
 inside('app/assets/stylesheets/') do
   FileUtils.rm_rf 'application.css'
+  FileUtils.touch 'application.css'
 end
-get "https://github.com/paulirish/html5-boilerplate/raw/master/css/style.css", "app/assets/stylesheets/application.css"
 prepend_to_file 'app/assets/stylesheets/application.css' do
   " /*
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require application-pre
  *= require_self
- *= require_tree .
+ *= require application-post
 */
 
 "
 end
-gsub_file 'app/assets/stylesheets/application.css', /==\|==/, '==|==.'
+get "https://github.com/paulirish/html5-boilerplate/raw/master/css/style.css", "app/assets/stylesheets/application-pre.css"
+get "https://github.com/paulirish/html5-boilerplate/raw/master/css/style.css", "app/assets/stylesheets/application-post.css"
+gsub_file 'app/assets/stylesheets/application-pre.css', /\/\* ==\|== media queries.* /m, ''
+gsub_file 'app/assets/stylesheets/application-post.css', /\A.*?(==\|== primary styles).*?(\*\/){1}/m, ''
+gsub_file 'app/assets/stylesheets/application-pre.css', /==\|==/, '==|==.'
+gsub_file 'app/assets/stylesheets/application-post.css', /==\|==/, '==|==.'
 
 # Download HTML5 Boilerplate site root assets
 get "https://github.com/russfrisch/html5-boilerplate/raw/master/apple-touch-icon-114x114-precomposed.png", "public/apple-touch-icon-114x114-precomposed.png"
