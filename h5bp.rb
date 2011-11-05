@@ -20,9 +20,8 @@ prepend_to_file 'app/assets/stylesheets/application.css' do
  *= require application-post
 */
 "
-# https://github.com/h5bp/html5-boilerplate/raw/master/css/style.css
-
 end
+
 get "https://github.com/h5bp/html5-boilerplate/raw/master/css/style.css", "app/assets/stylesheets/application-pre.css"
 get "https://github.com/h5bp/html5-boilerplate/raw/master/css/style.css", "app/assets/stylesheets/application-post.css"
 gsub_file 'app/assets/stylesheets/application-pre.css', /\/\* ==\|== media queries.* /m, ''
