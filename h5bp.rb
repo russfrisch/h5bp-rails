@@ -22,8 +22,9 @@ prepend_to_file 'app/assets/stylesheets/application.css' do
 
 "
 end
-get "https://github.com/paulirish/html5-boilerplate/raw/master/css/style.css", "app/assets/stylesheets/application-pre.css"
-get "https://github.com/paulirish/html5-boilerplate/raw/master/css/style.css", "app/assets/stylesheets/application-post.css"
+# palirish boilerplate moved to https://github.com/h5bp/html5-boilerplate fixing references to paulirish
+get "https://github.com/h5bp/html5-boilerplate/raw/master/css/style.css", "app/assets/stylesheets/application-pre.css"
+get "https://github.com/h5bp/html5-boilerplate/raw/master/css/style.css", "app/assets/stylesheets/application-post.css"
 gsub_file 'app/assets/stylesheets/application-pre.css', /\/\* ==\|== media queries.* /m, ''
 gsub_file 'app/assets/stylesheets/application-post.css', /\A.*?(==\|== primary styles).*?(\*\/){1}/m, ''
 gsub_file 'app/assets/stylesheets/application-pre.css', /==\|==/, '==|==.'
