@@ -15,6 +15,7 @@ prepend_to_file 'app/assets/stylesheets/application.css' do
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require normalize
  *= require application-pre
  *= require_self
  *= require application-post
@@ -22,10 +23,11 @@ prepend_to_file 'app/assets/stylesheets/application.css' do
 
 "
 end
-get "https://github.com/paulirish/html5-boilerplate/raw/master/css/style.css", "app/assets/stylesheets/application-pre.css"
-get "https://github.com/paulirish/html5-boilerplate/raw/master/css/style.css", "app/assets/stylesheets/application-post.css"
-gsub_file 'app/assets/stylesheets/application-pre.css', /\/\* ==\|== media queries.* /m, ''
-gsub_file 'app/assets/stylesheets/application-post.css', /\A.*?(==\|== primary styles).*?(\*\/){1}/m, ''
+get "https://github.com/h5bp/html5-boilerplate/raw/master/css/main.css", "app/assets/stylesheets/application-post.css"
+get "https://github.com/h5bp/html5-boilerplate/raw/master/css/main.css", "app/assets/stylesheets/application-pre.css"
+get "https://github.com/h5bp/html5-boilerplate/raw/master/css/normalize.css", "app/assets/stylesheets/normalize.css"
+gsub_file 'app/assets/stylesheets/application-pre.css', /\/\*\s=*\n\s*Helper classes.*/m, ''
+gsub_file 'app/assets/stylesheets/application-post.css', /\A.*Author's custom styles\s*=*\s\*\//m, ''
 gsub_file 'app/assets/stylesheets/application-pre.css', /==\|==/, '==|==.'
 gsub_file 'app/assets/stylesheets/application-post.css', /==\|==/, '==|==.'
 

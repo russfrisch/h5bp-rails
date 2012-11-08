@@ -6,7 +6,7 @@
 get "https://github.com/russfrisch/h5bp-rails/raw/master/assets/plugins.js.coffee", "app/assets/javascripts/plugins.js.coffee"
 
 # Download and merge HTML5 Boilerplate stylesheet with application.css
-get "https://github.com/paulirish/html5-boilerplate/raw/master/css/style.css", "app/assets/stylesheets/application.css.new"
+get "https://github.com/h5bp/html5-boilerplate/raw/master/css/main.css", "app/assets/stylesheets/application.css.new"
 prepend_to_file 'app/assets/stylesheets/application.css.new' do
   " /*
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
@@ -19,6 +19,8 @@ prepend_to_file 'app/assets/stylesheets/application.css.new' do
 "
 end
 gsub_file 'app/assets/stylesheets/application.css', /==\|==/, '==|==.'
+
+get "https://github.com/h5bp/html5-boilerplate/raw/master/css/normalize.css", "app/assets/stylesheets/normalize.css"
 
 # Download HTML5 Boilerplate site root assets
 get "https://github.com/russfrisch/html5-boilerplate/raw/master/apple-touch-icon-114x114-precomposed.png", "public/apple-touch-icon-114x114-precomposed.png"
